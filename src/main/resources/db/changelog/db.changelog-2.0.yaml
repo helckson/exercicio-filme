@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: dois
+      author: admin
+      changes:
+        - addColumn:
+            tableName: filmes
+            columns:
+              - column:
+                  name: genero
+                  type: varchar(255)
+                  defaultValue: 'Desconhecido'
+                  constraints:
+                    nullable: false

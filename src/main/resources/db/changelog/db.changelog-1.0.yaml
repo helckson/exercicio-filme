@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: um
+      author: admin
+      changes:
+        - createTable:
+            tableName: filmes
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nome
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: autor
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lancamento
+                  type: int
+                  constraints:
+                    nullable: false

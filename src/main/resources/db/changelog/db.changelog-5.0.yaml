@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: cinco
+      author: admin
+      changes:
+        - createTable:
+            tableName: usuario_role
+            columns:
+              - column:
+                  name: usuario_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: usuario_role
+            baseColumnNames: usuario_id
+            referencedTableName: usuario
+            referencedColumnNames: id
+            constraintName: fk_usuario_role_usuario
+        - addForeignKeyConstraint:
+            baseTableName: usuario_role
+            baseColumnNames: role_id
+            referencedTableName: role
+            referencedColumnNames: id
+            constraintName: fk_usuario_role_role
